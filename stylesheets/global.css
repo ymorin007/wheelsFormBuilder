@@ -1,0 +1,39 @@
+body{
+	background-color:#F0F0F0;
+	font: 12px/1.5 'Lucida Sans Unicode', Arial;
+}
+
+.box{
+	background-color: #FBFBFB;
+	border: 2px solid black;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 15px black;
+	box-shadow: 0px 0px 5px black;
+	-moz-box-shadow: 0 0 5px black;
+}
+
+.fields{border:1px dotted silver; padding: 5px;}
+
+input[type=text]{width:60px;}
+
+input[type=submit]{width:5px;}
+
+.tagcolor{color:#0000FF;}
+
+.tagcomment{background-color:#FFFF99}
+
+.attribcolor{color:#9A2B0A;}
+
+.fields:hover {	background-color:#E8F2FE;	cursor:move;}
+
+div.inline { float:left; }
+
+div#leftside{ width: 210px; margin-right: 10px;}
+
+div#rightside{ width: 75%;}
+
+.helplink{cursor:help}
+
+.btnDelete{float:right;}
+
+.chkUnique{margin-left:15px;}
