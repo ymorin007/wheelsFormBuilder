@@ -11,8 +11,7 @@
 ## Getting Started
 
 1. Fork the master branch.
-2. Check out the [ValidateThis Quick-Start Guide](http://www.validatethis.org/docs/wiki/QuickStart_Guide.cfm)
-3. Refer to the following useful resources.
+2. Refer to the following useful resources.
 
 ### Resources
 
