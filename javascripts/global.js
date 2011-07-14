@@ -262,7 +262,7 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'select') {
-			$('<p class="fields" id="field_' + i + '">#select(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>," label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#select(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>", label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 
 		else if ($(this).attr('id') == 'selectTag') {
