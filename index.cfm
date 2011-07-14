@@ -77,10 +77,10 @@
 		
 		<div class="box" id="viewformcontainer">
 		<div id="viewform">
-			##startFormTag(controller="<span class='src_viewformcontroller'></span>", action="<span class="src_formaction"></span>")##<br/>
+			<p>##startFormTag(controller="<span class='src_viewformcontroller'></span>", action="<span class="src_formaction"></span>")##</p>
 			
 			<Blockquote>
-			##errorMessagesFor("<span class='src_objectname'></span>")##<br/>
+			<p>##errorMessagesFor("<span class='src_objectname'></span>")##</p>
 			
 			<div id="formelement"></div>
 		
