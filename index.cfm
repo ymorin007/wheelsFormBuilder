@@ -35,29 +35,31 @@
 			<div id="fieldsmenu">
 				<h3><a href="javascript:void(0)">for Objectname</a></h3>
 				<div>
-				<p><img src="images/new_text.png"/> Input Text <a href="javascript:void(0)" id ="textField">Add</a></p>
-				<p><img src="images/new_hidden.png"/> Hidden <a href="javascript:void(0)" id ="hiddenField">Add</a></p>
-				<p><img src="images/new_password.png"/> Password <a href="javascript:void(0)" id ="passwordField">Add</a></p>
-				<p><img src="images/new_textarea.png"/> Textarea <a href="javascript:void(0)" id ="textArea">Add</a></p>
-				<p><img src="images/new_radio.png"/> Radio <a href="javascript:void(0)" id ="radioButton">Add</a></p>
-				<p><img src="images/new_checkbox.png"/> Checkbox <a href="javascript:void(0)" id ="checkBox">Add</a></p>
-				<p><img src="images/new_select.png"/> Drop-Down <a href="javascript:void(0)" id ="select">Add</a></p>
-				<p><img src="images/new_file.png"/> File <a href="javascript:void(0)" id ="fileField">Add</a></p>
-				<p><img src="images/new_date_picker.png"/> DatePicker <a href="javascript:void(0)" id ="dateSelect">Add</a></p>
+				<p class="field"><a href="javascript:void(0)" id ="textField"><img src="images/new_text.png"/> Input Text </a></p>
+				<p><a href="javascript:void(0)" id ="hiddenField"><img src="images/new_hidden.png"/> Hidden </a></p>
+				<p><a href="javascript:void(0)" id ="passwordField"><img src="images/new_password.png"/> Password</a></p>
+				<p><a href="javascript:void(0)" id ="textArea"><img src="images/new_textarea.png"/> Textarea</a></p>
+				<p><a href="javascript:void(0)" id ="radioButton"><img src="images/new_radio.png"/> Radio</a></p>
+				<p><a href="javascript:void(0)" id ="checkBox"><img src="images/new_checkbox.png"/> Checkbox</a></p>
+				<p><a href="javascript:void(0)" id ="select"><img src="images/new_select.png"/> Drop-Down</a></p>
+				<p><a href="javascript:void(0)" id ="fileField"><img src="images/new_file.png"/> File</a></p>
+				<p><a href="javascript:void(0)" id ="dateSelect"><img src="images/new_date_picker.png"/> Date Picker</a></p>
+				<p><a href="javascript:void(0)" id ="dateTimeSelect"><img src="images/new_date_picker.png"/> Date Time Picker</a></p>
 				</div>
 				<h3><a href="##">For tag</a></h3>
 				<div>
-				<p><img src="images/new_image.png"/> Image <a href="javascript:void(0)" id ="imageTag">Add</a></p>
-				<p><img src="images/new_text.png"/> Input Text <a href="javascript:void(0)" id ="textFieldTag">Add</a></p>
-				<p><img src="images/new_hidden.png"/> Hidden <a href="javascript:void(0)" id ="hiddenFieldTag">Add</a></p>
-				<p><img src="images/new_password.png"/> Password <a href="javascript:void(0)" id ="passwordFieldTag">Add</a></p>
-				<p><img src="images/new_textarea.png"/> Textarea <a href="javascript:void(0)" id ="textAreaTag">Add</a></p>
-				<p><img src="images/new_radio.png"/> Radio <a href="javascript:void(0)" id ="radioButtonTag">Add</a></p>
-				<p><img src="images/new_checkbox.png"/> Checkbox <a href="javascript:void(0)" id ="checkBoxTag">Add</a></p>
-				<p><img src="images/new_select.png"/> Drop-Down <a href="javascript:void(0)" id ="selectTag">Add</a></p>
-				<p><img src="images/new_file.png"/> File <a href="javascript:void(0)" id ="fileFieldTag">Add</a></p>
-				<p><img src="images/new_date_picker.png"/> DatePicker <a href="javascript:void(0)" id ="dateSelectTags">Add</a></p>
-				<p><img src="images/new_button.png"/> Submit button <a href="javascript:void(0)" id ="add_submit">Add</a></p>
+				<p><a href="javascript:void(0)" id ="imageTag"><img src="images/new_image.png"/> Image </a></p>
+				<p><a href="javascript:void(0)" id ="textFieldTag"><img src="images/new_text.png"/> Input Text </a></p>
+				<p><a href="javascript:void(0)" id ="hiddenFieldTag"><img src="images/new_hidden.png"/> Hidden </a></p>
+				<p><a href="javascript:void(0)" id ="passwordFieldTag"><img src="images/new_password.png"/> Password </a></p>
+				<p><a href="javascript:void(0)" id ="textAreaTag"><img src="images/new_textarea.png"/> Textarea </a></p>
+				<p><a href="javascript:void(0)" id ="radioButtonTag"><img src="images/new_radio.png"/> Radio </a></p>
+				<p><a href="javascript:void(0)" id ="checkBoxTag"><img src="images/new_checkbox.png"/> Checkbox </a></p>
+				<p><a href="javascript:void(0)" id ="selectTag"><img src="images/new_select.png"/> Drop-Down </a></p>
+				<p><a href="javascript:void(0)" id ="fileFieldTag"><img src="images/new_file.png"/> File </a></p>
+				<p><a href="javascript:void(0)" id ="dateSelectTags"><img src="images/new_date_picker.png"/> Date Picker </a></p>
+				<p><a href="javascript:void(0)" id ="dateTimeSelectTags"><img src="images/new_date_picker.png"/> Date Time Picker </a></p>				
+				<p><a href="javascript:void(0)" id ="add_submit"><img src="images/new_button.png"/> Submit button </a></p>
 				</div>				
 			</div>
 		</fieldset>
