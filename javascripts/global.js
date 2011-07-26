@@ -13,6 +13,11 @@ $(function(){
 			axis: "y",
 			cursor: "move"
 		});
+		
+	$( "#viewformcontainer" ).sortable({
+			revert: true
+		});
+
 
 	$( "#view_code" ).button({
             icons: {
@@ -100,7 +105,7 @@ $(function(){
 	/* on click to add imageTag */
 	$("#imageTag").click(function() { 
 		var i = ($('p.fields').length);
-	   	$('<p class="fields" id="field_' + i + '">#imageTag(source="<span id="imageSource_' + i + '"></span><input type="text" class="input" class="input" id="txtImageSource_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+	   	$('<p class="fields" id="field_' + i + '">#imageTag(source="<span id="imageSource_' + i + '"></span><input type="text" class="input" class="input" id="txtImageSource_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 	  
 	 	$("#txtImageSource_" + i).live('keyup', function(){
 	        $('#imageSource_' + i).html($(this).val());
@@ -112,10 +117,10 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'textField'){
-			$('<p class="fields" id="field_' + i + '">#textField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') +  '</span>", property="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>")#<span class="input"><br/>Unique <input type="checkbox" class="chkUnique" id="' + i + '"> <a href="javascript:void(0)" class="input" id="help_unique" class="helplink">?</a><br/></span> <span class="input">defaultValue <input type="text" class="input" id="txtTextValue_' + i + '"/></span><input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);	
+			$('<p class="fields" id="field_' + i + '">#textField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') +  '</span>", property="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>")#<span class="input"><br/>Unique <input type="checkbox" class="chkUnique" id="' + i + '"> <a href="javascript:void(0)" class="input" id="help_unique" class="helplink">?</a><br/></span> <span class="input">defaultValue <input type="text" class="input" id="txtTextValue_' + i + '"/></span><input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);	
 		}
 		else if ($(this).attr('id') == 'textFieldTag'){
-			$('<p class="fields" id="field_' + i + '">#textFieldTag(name="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>"), value="<span id="textValue_' + i + '"></span><input type="text" class="input" id="txtTextValue_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
+			$('<p class="fields" id="field_' + i + '">#textFieldTag(name="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>"), value="<span id="textValue_' + i + '"></span><input type="text" class="input" id="txtTextValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
 		}
 
 	 	$("#txtTextProperty_" + i).live('keyup', function(){
@@ -146,10 +151,10 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'hiddenField') {
-			$('<p class="fields" id="field_' + i + '">#hiddenField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="hiddenProperty_' + i + '"></span><input type="text" class="input" id="txtHiddenProperty_' + i + '"/>", label="<span id="hiddenLabel_' + i + '"></span><input type="text" class="input" id="txtHiddenLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#hiddenField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="hiddenProperty_' + i + '"></span><input type="text" class="input" id="txtHiddenProperty_' + i + '"/>", label="<span id="hiddenLabel_' + i + '"></span><input type="text" class="input" id="txtHiddenLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 		else if ($(this).attr('id') == 'hiddenFieldTag') {
-			$('<p class="fields" id="field_' + i + '">#hiddenFieldTag(name="<span id="hiddenProperty_' + i + '"></span><input type="text" class="input" id="txtHiddenProperty_' + i + '"/>", label="<span id="hiddenLabel_' + i + '"></span><input type="text" class="input" id="txtHiddenLabel_' + i + '"/>"), value="<span id="hiddenValue_' + i + '"></span><input type="text" class="input" id="txtHiddenValue_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
+			$('<p class="fields" id="field_' + i + '">#hiddenFieldTag(name="<span id="hiddenProperty_' + i + '"></span><input type="text" class="input" id="txtHiddenProperty_' + i + '"/>", label="<span id="hiddenLabel_' + i + '"></span><input type="text" class="input" id="txtHiddenLabel_' + i + '"/>"), value="<span id="hiddenValue_' + i + '"></span><input type="text" class="input" id="txtHiddenValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
 		}	  
 	  
 	 	$("#txtHiddenProperty_" + i).live('keyup', function(){
@@ -170,10 +175,10 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'passwordField') {
-			$('<p class="fields" id="field_' + i + '">#passwordField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="passwordProperty_' + i + '"></span><input type="text" class="input" id="txtPasswordProperty_' + i + '"/>", label="<span id="passwordLabel_' + i + '"></span><input type="text" class="input" id="txtPasswordLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#passwordField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="passwordProperty_' + i + '"></span><input type="text" class="input" id="txtPasswordProperty_' + i + '"/>", label="<span id="passwordLabel_' + i + '"></span><input type="text" class="input" id="txtPasswordLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 		else if ($(this).attr('id') == 'passwordFieldTag') {
-			$('<p class="fields" id="field_' + i + '">#passwordFieldTag(name="<span id="passwordProperty_' + i + '"></span><input type="text" class="input" id="txtPasswordProperty_' + i + '"/>", label="<span id="passwordLabel_' + i + '"></span><input type="text" class="input" id="txtPasswordLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#passwordFieldTag(name="<span id="passwordProperty_' + i + '"></span><input type="text" class="input" id="txtPasswordProperty_' + i + '"/>", label="<span id="passwordLabel_' + i + '"></span><input type="text" class="input" id="txtPasswordLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 	  
 	 	$("#txtPasswordProperty_" + i).live('keyup', function(){
@@ -190,10 +195,10 @@ $(function(){
 		var i = ($('p.fields').length);
 
 		if ($(this).attr('id') == 'textArea') {
-			$('<p class="fields" id="field_' + i + '">#textArea(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="textareaProperty_' + i + '"></span><input type="text" class="input" id="txtTextareaProperty_' + i + '"/>", label="<span id="textareaLabel_' + i + '"></span><input type="text" class="input" id="txtTextareaLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#textArea(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="textareaProperty_' + i + '"></span><input type="text" class="input" id="txtTextareaProperty_' + i + '"/>", label="<span id="textareaLabel_' + i + '"></span><input type="text" class="input" id="txtTextareaLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 		else if ($(this).attr('id') == 'textAreaTag') {
-			$('<p class="fields" id="field_' + i + '">#textAreaTag(name="<span id="textareaProperty_' + i + '"></span><input type="text" class="input" id="txtTextareaProperty_' + i + '"/>", label="<span id="textareaLabel_' + i + '"></span><input type="text" class="input" id="txtTextareaLabel_' + i + '"/>"), value="<span id="textareaValue_' + i + '"></span><input type="text" class="input" id="txtTextareaValue_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
+			$('<p class="fields" id="field_' + i + '">#textAreaTag(name="<span id="textareaProperty_' + i + '"></span><input type="text" class="input" id="txtTextareaProperty_' + i + '"/>", label="<span id="textareaLabel_' + i + '"></span><input type="text" class="input" id="txtTextareaLabel_' + i + '"/>", value="<span id="textareaValue_' + i + '"></span><input type="text" class="input" id="txtTextareaValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
 		}
 	  
 	 	$("#txtTextareaProperty_" + i).live('keyup', function(){
@@ -214,10 +219,10 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'radioButton') {
-			$('<p class="fields" id="field_' + i + '">#radioButton(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="radioProperty_' + i + '"></span><input type="text" class="input" id="txtRadioProperty_' + i + '"/>", label="<span id="radioLabel_' + i + '"></span><input type="text" class="input" id="txtRadioLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#radioButton(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="radioProperty_' + i + '"></span><input type="text" class="input" id="txtRadioProperty_' + i + '"/>", label="<span id="radioLabel_' + i + '"></span><input type="text" class="input" id="txtRadioLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 		else if ($(this).attr('id') == 'radioButtonTag') {
-			$('<p class="fields" id="field_' + i + '">#radioButtonTag(name="<span id="radioProperty_' + i + '"></span><input type="text" class="input" id="txtRadioProperty_' + i + '"/>", label="<span id="radioLabel_' + i + '"></span><input type="text" class="input" id="txtRadioLabel_' + i + '"/>"), value="<span id="radioValue_' + i + '"></span><input type="text" class="input" id="txtRadioValue_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#radioButtonTag(name="<span id="radioProperty_' + i + '"></span><input type="text" class="input" id="txtRadioProperty_' + i + '"/>", label="<span id="radioLabel_' + i + '"></span><input type="text" class="input" id="txtRadioLabel_' + i + '"/>"), value="<span id="radioValue_' + i + '"></span><input type="text" class="input" id="txtRadioValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 				
 	 	$("#txtRadioProperty_" + i).live('keyup', function(){
@@ -238,10 +243,10 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'checkBox') {
-			$('<p class="fields" id="field_' + i + '">#checkBox(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="checkboxProperty_' + i + '"></span><input type="text" class="input" id="txtCheckboxProperty_' + i + '"/>", label="<span id="checkboxLabel_' + i + '"></span><input type="text" class="input" id="txtCheckboxLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#checkBox(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="checkboxProperty_' + i + '"></span><input type="text" class="input" id="txtCheckboxProperty_' + i + '"/>", label="<span id="checkboxLabel_' + i + '"></span><input type="text" class="input" id="txtCheckboxLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 		else if ($(this).attr('id') == 'checkBoxTag') {
-			$('<p class="fields" id="field_' + i + '">#checkBoxTag(name="<span id="checkboxProperty_' + i + '"></span><input type="text" class="input" id="txtCheckboxProperty_' + i + '"/>", label="<span id="checkboxLabel_' + i + '"></span><input type="text" class="input" id="txtCheckboxLabel_' + i + '"/>"), value="<span id="checkboxValue_' + i + '"></span><input type="text" class="input" id="txtCheckboxValue_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
+			$('<p class="fields" id="field_' + i + '">#checkBoxTag(name="<span id="checkboxProperty_' + i + '"></span><input type="text" class="input" id="txtCheckboxProperty_' + i + '"/>", label="<span id="checkboxLabel_' + i + '"></span><input type="text" class="input" id="txtCheckboxLabel_' + i + '"/>"), value="<span id="checkboxValue_' + i + '"></span><input type="text" class="input" id="txtCheckboxValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
 		}		  
 	  
 	 	$("#txtCheckboxProperty_" + i).live('keyup', function(){
@@ -262,11 +267,11 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'select') {
-			$('<p class="fields" id="field_' + i + '">#select(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>", label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#select(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>", label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 
 		else if ($(this).attr('id') == 'selectTag') {
-			$('<p class="fields" id="field_' + i + '">#selectTag(name="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>", label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>", valueField="<span id="selectValueField_' + i + '"></span><input type="text" class="input" id="txtSelectValueField_' + i + '"/>", textField="<span id="selectTextField_' + i + '"></span><input type="text" class="input" id="txtSelectTextField_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#selectTag(name="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>", label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>", valueField="<span id="selectValueField_' + i + '"></span><input type="text" class="input" id="txtSelectValueField_' + i + '"/>", textField="<span id="selectTextField_' + i + '"></span><input type="text" class="input" id="txtSelectTextField_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 			  
 	 	$("#txtSelectProperty_" + i).live('keyup', function(){
@@ -295,11 +300,11 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'fileField') {
-			$('<p class="fields" id="field_' + i + '">#fileField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="fileProperty_' + i + '"></span><input type="text" class="input" id="txtFileProperty_' + i + '"/>", label="<span id="fileLabel_' + i + '"></span><input type="text" class="input" id="txtFileLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#fileField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="fileProperty_' + i + '"></span><input type="text" class="input" id="txtFileProperty_' + i + '"/>", label="<span id="fileLabel_' + i + '"></span><input type="text" class="input" id="txtFileLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 		
 		else if ($(this).attr('id') == 'fileFieldTag') {
-			$('<p class="fields" id="field_' + i + '">#fileFieldTag(name="<span id="fileProperty_' + i + '"></span><input type="text" class="input" id="txtFileProperty_' + i + '"/>", label="<span id="fileLabel_' + i + '"></span><input type="text" class="input" id="txtFileLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#fileFieldTag(name="<span id="fileProperty_' + i + '"></span><input type="text" class="input" id="txtFileProperty_' + i + '"/>", label="<span id="fileLabel_' + i + '"></span><input type="text" class="input" id="txtFileLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 	  
 	 	$("#txtFileProperty_" + i).live('keyup', function(){
@@ -316,11 +321,11 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'dateSelect') {
-			$('<p class="fields" id="field_' + i + '">#dateSelect(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="datepickerProperty_' + i + '"></span><input type="text" class="input" id="txtDatepickerProperty_' + i + '"/>", label="<span id="datepickerLabel_' + i + '"></span><input type="text" class="input" id="txtDatepickerLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#dateSelect(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="datepickerProperty_' + i + '"></span><input type="text" class="input" id="txtDatepickerProperty_' + i + '"/>", label="<span id="datepickerLabel_' + i + '"></span><input type="text" class="input" id="txtDatepickerLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 
 		if ($(this).attr('id') == 'dateSelectTags') {
-			$('<p class="fields" id="field_' + i + '">#dateSelectTag(name="<span id="datepickerProperty_' + i + '"></span><input type="text" class="input" id="txtDatepickerProperty_' + i + '"/>", label="<span id="datepickerLabel_' + i + '"></span><input type="text" class="input" id="txtDatepickerLabel_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" id="field_' + i + '">#dateSelectTags(name="<span id="datepickerProperty_' + i + '"></span><input type="text" class="input" id="txtDatepickerProperty_' + i + '"/>", label="<span id="datepickerLabel_' + i + '"></span><input type="text" class="input" id="txtDatepickerLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 		}
 	  
 	 	$("#txtDatepickerProperty_" + i).live('keyup', function(){
@@ -332,10 +337,31 @@ $(function(){
 	    });	  
 	});	
 
+	/* on click to add file */
+	$("#dateTimeSelect,#dateTimeSelectTags").click(function() { 
+		var i = ($('p.fields').length);
+		
+		if ($(this).attr('id') == 'dateTimeSelect') {
+			$('<p class="fields" id="field_' + i + '">#dateTimeSelect(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="datepickerProperty_' + i + '"></span><input type="text" class="input" id="txtDatepickerProperty_' + i + '"/>", label="<span id="datepickerLabel_' + i + '"></span><input type="text" class="input" id="txtDatepickerLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+		}
+
+		if ($(this).attr('id') == 'dateTimeSelectTags') {
+			$('<p class="fields" id="field_' + i + '">#dateTimeSelectTags(name="<span id="datetimepickerProperty_' + i + '"></span><input type="text" class="input" id="txtDatetimepickerProperty_' + i + '"/>", label="<span id="datetimepickerLabel_' + i + '"></span><input type="text" class="input" id="txtDatetimepickerLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+		}
+	  
+	 	$("#txtDatetimepickerProperty_" + i).live('keyup', function(){
+	        $('#datetimepickerProperty_' + i).html($(this).val());
+	    });	  
+
+	 	$("#txtDatetimepickerLabel_" + i).live('keyup', function(){
+	        $('#datetimepickerLabel_' + i).html($(this).val());
+	    });	  
+	});	
+
 	/* on click to add submit button */
 	$("#add_submit").click(function() { 
 		var i = ($('p.fields').length);
-		$('<p class="fields" id="field_' + i + '">#submitTag(value="<span id="submitValue_' + i + '"></span><input type="text" class="input" id="txtSubmitValue_' + i + '"/>")#<input type="button" value="x" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+		$('<p class="fields" id="field_' + i + '">#submitTag(value="<span id="submitValue_' + i + '"></span><input type="text" class="input" id="txtSubmitValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
 	  
 	 	$("#txtSubmitValue_" + i).live('keyup', function(){
 	        $('#submitValue_' + i).html($(this).val());
