@@ -1,6 +1,6 @@
 body{
 	background-color:#F0F0F0;
-	font: 12px/1.5 'Lucida Sans Unicode', Arial;
+	font: 11px/1.5 'Lucida Sans Unicode', Arial;
 }
 
 .box{
@@ -28,9 +28,9 @@ input[type=submit]{width:5px;}
 
 div.inline { float:left; }
 
-div#leftside{ width: 210px; margin-right: 10px;}
+div#leftside{ width: 220px; margin-right: 10px;}
 
-div#rightside{ width: 75%;}
+div#rightside{ width: 70%;}
 
 .helplink{cursor:help}
 
