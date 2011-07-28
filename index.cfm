@@ -79,7 +79,7 @@
 		
 		<div class="box" id="viewformcontainer">
 		<div id="viewform">
-			<p>##startFormTag(controller="<span class='src_viewformcontroller'></span>", action="<span class="src_formaction"></span>")##</p>
+			<p>##startFormTag(controller="<span class='src_viewformcontroller'></span>", action="<span class="src_formaction"></span>"<span class="src_form_key"></span>)##</p>
 			
 			<Blockquote>
 			<p>##errorMessagesFor("<span class='src_objectname'></span>")##</p>
@@ -108,7 +108,10 @@
 				<p><span class="tagcomment">&lt;!--- Form Action ---&gt;</span></p>	
 				<span class="tagcolor">&lt;cffunction</span> <span class="attribcolor">name</span>=<span class="tagcolor">"<span class="src_pagename"></span>"</span> <span class="attribcolor">hint</span>=<span class="tagcolor">"onSubmit call <span class="src_formaction"></span>"&gt;</span><br/>
 		
-				<Blockquote><span class="tagcolor">&lt;cfset</span> <span class="src_objectname"></span> = model("<span class="src_objectname"></span>")<span class="src_pagetype"></span><span class="tagcolor">&gt;</span><br/></Blockquote>
+				<Blockquote>
+					<span class="src_selects"></span>				
+					<span class="tagcolor">&lt;cfset</span> <span class="src_objectname"></span> = model("<span class="src_objectname"></span>")<span class="src_pagetype"></span><span class="tagcolor">&gt;</span><br/>
+				</Blockquote>
 		
 				<span class="tagcolor">&lt;/cffunction&gt;</span>
 				</p>
@@ -121,9 +124,9 @@
 		
 				<Blockquote>
 					
-					<span class="tagcolor">&lt;cfset</span> <span class="src_objectname"></span> = model("<span class="src_objectname"></span>").<span class="tagcolor">new</span>(params.<span class="src_objectname"></span>)<span class="tagcolor">&gt;</span><br/>
+					<span class="tagcolor">&lt;cfset</span> <span class="src_objectname"></span> = model("<span class="src_objectname"></span>").findByKey(params.key)<span class="tagcolor">&gt;</span><br/>
 			
-					<p><span class="tagcolor">&lt;cfset</span> <span class="src_objectname"></span>.save()&gt;</p>
+					<p><span class="tagcolor">&lt;cfset</span> <span class="src_objectname"></span><span class="src_crud_save"></span><span class="src_crud_update"><span class="src_objectname"></span>)</span>&gt;</p>
 			
 					<p><span class="tagcolor">&lt;cfif</span> <span class="src_objectname"></span>.hasErrors()<span class="tagcolor">&gt;</span></p>
 					
