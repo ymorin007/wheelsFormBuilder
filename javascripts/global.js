@@ -1,5 +1,7 @@
 $(function(){
 	
+	$('.src_crud_update').hide();
+	
 	$('#toggle_controller').click(function() {
 	    $('#controllertabs').toggle(400);
 	    return false;
@@ -33,6 +35,33 @@ $(function(){
 		
 	$('.btnDelete').live('click', function(){
         $('#field_' + $(this).attr('id')).remove();
+		$('#select_' + $(this).attr('id')).remove();
+		$('#defaultvalue_' + $(this).attr('id')).remove();
+		
+		$('.fields').each(
+			// i represents the index of each of the elements
+			function(i){
+			  	// sets the id of each of the returned elements
+			  	// to the string concatenated with the expression 'i + 1'
+				this.id = 'field_' + (i+1);
+				
+				$(this).attr("rel", (i+1))
+			
+				$(this).children('.selectProperty').attr('id', 'selectProperty_' + (i+1));
+				$(this).children('.txtSelectProperty').attr('id', 'txtSelectProperty_' + (i+1));
+				$(this).children('.selectOptions').attr('id', 'selectOptions_' + (i+1));
+				$(this).children('.txtSelectOptions').attr('id', 'txtSelectOptions_' + (i+1));
+				$(this).children('.selectLabel').attr('id', 'selectLabel_' + (i+1));
+				$(this).children('.txtSelectLabel').attr('id', 'txtSelectLabel_' + (i+1));
+		  });
+		  
+		$('.selects').each(
+			// i represents the index of each of the elements
+			function(i){
+			  	// sets the id of each of the returned elements
+			  	// to the string concatenated with the expression 'i + 1'
+				$(this).attr('id', 'select_' + (i+1));				
+		  });			  			
       });
 
 	/* When click on 'make unique' then add validatesUniquenessOf to model init */
@@ -82,10 +111,16 @@ $(function(){
 		if ($("#pagename").attr('value') == 'new'){
 			$radios.filter('[value=new]').attr('checked', true);
 			$(".src_pagetype").html('.new()');
+			$('.src_form_key').html('');
+			$('.src_crud_save').html('.save()');
+			$('.src_crud_update').hide();
 		}
 		if ($("#pagename").attr('value') == 'edit'){
 			$radios.filter('[value=edit]').attr('checked', true);
 			$(".src_pagetype").html('.findByKey(params.key)');
+			$('.src_form_key').html(', key="#params.key#"');
+			$('.src_crud_save').html('.update(params.');
+			$('.src_crud_update').show();
 		}
 	});
 
@@ -117,7 +152,7 @@ $(function(){
 		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'textField'){
-			$('<p class="fields" id="field_' + i + '">#textField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') +  '</span>", property="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>")#<span class="input"><br/>Unique <input type="checkbox" class="chkUnique" id="' + i + '"> <a href="javascript:void(0)" class="input" id="help_unique" class="helplink">?</a><br/></span> <span class="input">defaultValue <input type="text" class="input" id="txtTextValue_' + i + '"/></span><input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);	
+			$('<p class="fields" rel="' + i + '" id="field_' + i + '">#textField(objectName="<span class="src_objectname">' + $("#objectname").attr('value') +  '</span>", property="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>")#<span class="input"><br/>Unique <input type="checkbox" class="chkUnique" id="' + i + '"> <a href="javascript:void(0)" class="input" id="help_unique" class="helplink">?</a><br/></span> <span class="input">defaultValue <input type="text" class="input" id="txtTextValue_' + i + '"/></span><input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);	
 		}
 		else if ($(this).attr('id') == 'textFieldTag'){
 			$('<p class="fields" id="field_' + i + '">#textFieldTag(name="<span id="textProperty_' + i + '"></span><input type="text" class="input" id="txtTextProperty_' + i + '"/>", label="<span id="textLabel_' + i + '"></span><input type="text" class="input" id="txtTextLabel_' + i + '"/>"), value="<span id="textValue_' + i + '"></span><input type="text" class="input" id="txtTextValue_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);			
@@ -140,8 +175,15 @@ $(function(){
 				$('#defaultvalue_' + i).hide();				
 			}
 			else{
-				var defaultValue = '<div id="defaultvalue_' + i + '"><span class="tagcolor">&lt;cfset property</span>(name="' + $('#txtTextProperty_' + i).val() + '" defaultValue="' + $(this).val() + '" )<span class="tagcolor">&gt;</span></div></div>';
-				$(defaultValue).appendTo('#defaultValue');
+				var id = $(this).parent().parent().attr('rel');
+				if ($('#defaultvalue_'+ id).length == 0){				
+					var defaultValue = '<div id="defaultvalue_' + i + '"><span class="tagcolor">&lt;cfset property</span>(name="' + $('#txtTextProperty_' + i).val() + '" defaultValue="' + $(this).val() + '" )<span class="tagcolor">&gt;</span></div></div>';
+					$(defaultValue).appendTo('#defaultValue');
+				}
+				else{
+					var content = '<div id="defaultvalue_' + i + '"><span class="tagcolor">&lt;cfset property</span>(name="' + $('#txtTextProperty_' + i).val() + '" defaultValue="' + $(this).val() + '" )<span class="tagcolor">&gt;</span></div></div>';
+					$('#defaultvalue_' + id).html(content);
+				}
 			}
 	    });	  	
 	});		
@@ -240,7 +282,7 @@ $(function(){
 
 	/* on click to add radio button */
 	$("#checkBox,#checkBoxTag").click(function() { 
-		var i = ($('p.fields').length);
+		var i = parseInt(($('p.fields').length)) + 1;
 		
 		if ($(this).attr('id') == 'checkBox') {
 			$('<p class="fields" id="field_' + i + '">#checkBox(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="checkboxProperty_' + i + '"></span><input type="text" class="input" id="txtCheckboxProperty_' + i + '"/>", label="<span id="checkboxLabel_' + i + '"></span><input type="text" class="input" id="txtCheckboxLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
@@ -263,11 +305,13 @@ $(function(){
 	});	
 
 	/* on click to add radio button */
-	$("#select,#selectTag").click(function() { 
-		var i = ($('p.fields').length);
+	$('#select,#selectTag').live('click', function(){
+		var i = parseInt(($('p.fields').length)) + 1;
+//		var i = ($('p.fields').length);
 		
 		if ($(this).attr('id') == 'select') {
-			$('<p class="fields" id="field_' + i + '">#select(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span id="selectProperty_' + i + '"></span><input type="text" class="input" id="txtSelectProperty_' + i + '"/>", options="<span id="selectOptions_' + i + '"></span><input type="text" class="input" id="txtSelectOptions_' + i + '"/>", label="<span id="selectLabel_' + i + '"></span><input type="text" class="input" id="txtSelectLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+			$('<p class="fields" rel="' + i + '" id="field_' + i + '">#select(objectName="<span class="src_objectname">' + $("#objectname").attr('value') + '</span>", property="<span class="selectProperty" id="selectProperty_' + i + '"></span><input type="text" class="input txtSelectProperty" id="txtSelectProperty_' + i + '"/>", options="<span class="selectOptions" id="selectOptions_' + i + '"></span><input type="text" class="input txtSelectOptions" id="txtSelectOptions_' + i + '"/>", label="<span class="selectLabel" id="selectLabel_' + i + '"></span><input type="text" class="input txtSelectLabel" id="txtSelectLabel_' + i + '"/>")#<input type="image" src="images/close.gif" class="input btnDelete" id="' + i + '"></p>').appendTo('#formelement').show("highlight", {}, 3000);
+		
 		}
 
 		else if ($(this).attr('id') == 'selectTag') {
@@ -292,7 +336,28 @@ $(function(){
 
 	 	$("#txtSelectTextField_" + i).live('keyup', function(){
 	        $('#selectTextField_' + i).html($(this).val());
-	    });	  			
+	    });	  	
+				
+	 	$("#txtSelectOptions_" + i).live('change', function(){
+			if ($(this).val() == ''){
+				//$('#defaultvalue_' + i).hide();				
+			}
+			else{
+				var id = $(this).parent().attr('rel');
+				var modelName = $(this).val();
+				var end = modelName.length - 1;
+				modelName = modelName.substring(0, end);
+				
+				if ($('#select_'+ id).length == 0){
+					var defaultValue = '<div id="select_' + i + '" class="selects"><span class="tagcolor">&lt;cfset</span> ' + $(this).val() + ' = model("' + modelName + '").findAll()<span class="tagcolor">&gt;</span></div>';
+					$(defaultValue).appendTo('.src_selects');					
+				}
+				else{
+					var content = '<div id="select_' + i + '" class="selects"><span class="tagcolor">&lt;cfset</span> ' + $(this).val() + ' = model("' + modelName + '").findAll()<span class="tagcolor">&gt;</span></div>';
+					$('#select_' + id).html(content);
+				}				
+			}
+	    });				
 	});	
 	
 	/* on click to add file */
